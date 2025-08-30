@@ -18,7 +18,7 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     id: "javascript",
     label: "JavaScript",
     logoPath: "/javascript.png",
-    pistonRuntime: { language: "javascript", version: "18.15.0" }, // api that we're gonna be using
+    pistonRuntime: { language: "javascript", version: "18.15.0" },
     monacoLanguage: "javascript",
     defaultCode: `// JavaScript Playground
 const numbers = [1, 2, 3, 4, 5];
@@ -105,11 +105,11 @@ print(f"Sum of numbers: {numbers_sum}")`,
   public static void main(String[] args) {
       // Create array
       int[] numbers = {1, 2, 3, 4, 5};
-      
+
       // Print original numbers
       System.out.print("Original numbers: ");
       printArray(numbers);
-      
+
       // Calculate and print squares
       int[] squares = new int[numbers.length];
       for (int i = 0; i < numbers.length; i++) {
@@ -117,20 +117,20 @@ print(f"Sum of numbers: {numbers_sum}")`,
       }
       System.out.print("Squared numbers: ");
       printArray(squares);
-      
+
       // Print even numbers
       System.out.print("Even numbers: ");
       for (int n : numbers) {
           if (n % 2 == 0) System.out.print(n + " ");
       }
       System.out.println();
-      
+
       // Calculate and print sum
       int sum = 0;
       for (int n : numbers) sum += n;
       System.out.println("Sum of numbers: " + sum);
   }
-  
+
   private static void printArray(int[] arr) {
       for (int n : arr) System.out.print(n + " ");
       System.out.println();
@@ -150,17 +150,17 @@ import "fmt"
 func main() {
   // Create slice
   numbers := []int{1, 2, 3, 4, 5}
-  
+
   // Print original numbers
   fmt.Println("Original numbers:", numbers)
-  
+
   // Calculate squares
   squares := make([]int, len(numbers))
   for i, n := range numbers {
       squares[i] = n * n
   }
   fmt.Println("Squared numbers:", squares)
-  
+
   // Filter even numbers
   var evenNumbers []int
   for _, n := range numbers {
@@ -169,7 +169,7 @@ func main() {
       }
   }
   fmt.Println("Even numbers:", evenNumbers)
-  
+
   // Calculate sum
   sum := 0
   for _, n := range numbers {
@@ -187,17 +187,17 @@ func main() {
     defaultCode: `fn main() {
     // Create vector
     let numbers = vec![1, 2, 3, 4, 5];
-    
+
     // Print original numbers
     println!("Original numbers: {:?}", numbers);
-    
+
     // Calculate squares
     let squares: Vec<i32> = numbers
         .iter()
         .map(|&n| n * n)
         .collect();
     println!("Squared numbers: {:?}", squares);
-    
+
     // Filter even numbers
     let even_numbers: Vec<i32> = numbers
         .iter()
@@ -205,7 +205,7 @@ func main() {
         .cloned()
         .collect();
     println!("Even numbers: {:?}", even_numbers);
-    
+
     // Calculate sum
     let sum: i32 = numbers.iter().sum();
     println!("Sum of numbers: {}", sum);
@@ -225,33 +225,33 @@ func main() {
 int main() {
     // Create vector
     std::vector<int> numbers = {1, 2, 3, 4, 5};
-    
+
     // Print original numbers
     std::cout << "Original numbers: ";
     for (int n : numbers) std::cout << n << " ";
     std::cout << std::endl;
-    
+
     // Calculate squares
     std::vector<int> squares;
-    std::transform(numbers.begin(), numbers.end(), 
+    std::transform(numbers.begin(), numbers.end(),
                   std::back_inserter(squares),
                   [](int n) { return n * n; });
-    
+
     std::cout << "Squared numbers: ";
     for (int n : squares) std::cout << n << " ";
     std::cout << std::endl;
-    
+
     // Filter even numbers
     std::cout << "Even numbers: ";
     for (int n : numbers) {
         if (n % 2 == 0) std::cout << n << " ";
     }
     std::cout << std::endl;
-    
+
     // Calculate sum
     int sum = std::accumulate(numbers.begin(), numbers.end(), 0);
     std::cout << "Sum of numbers: " << sum << std::endl;
-    
+
     return 0;
 }`,
   },
@@ -268,18 +268,18 @@ class Program {
     static void Main() {
         // Create array
         int[] numbers = { 1, 2, 3, 4, 5 };
-        
+
         // Print original numbers
         Console.WriteLine($"Original numbers: {string.Join(" ", numbers)}");
-        
+
         // Calculate squares
         var squares = numbers.Select(n => n * n);
         Console.WriteLine($"Squared numbers: {string.Join(" ", squares)}");
-        
+
         // Filter even numbers
         var evenNumbers = numbers.Where(n => n % 2 == 0);
         Console.WriteLine($"Even numbers: {string.Join(" ", evenNumbers)}");
-        
+
         // Calculate sum
         var sum = numbers.Sum();
         Console.WriteLine($"Sum of numbers: {sum}");
